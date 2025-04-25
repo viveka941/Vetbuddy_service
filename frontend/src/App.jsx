@@ -8,6 +8,12 @@ import AppointementForm from "./component/user/AppointementForm";
 import Donation from "./component/Donation";
 import Adoption from "./component/Adoption";
 import Volunteer from "./component/Volunteer";
+<<<<<<< HEAD
+import Resources from "./component/Resources";
+import About from "./component/About";
+import Pages from "./component/Pages";
+=======
+>>>>>>> upstream/main
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -18,7 +24,14 @@ function App() {
     { path: "/appointementbook/:id", element: <AppointementForm /> },
     { path: "/donate", element: <Donation /> },
     { path: "/adopt", element: <Adoption /> },
+<<<<<<< HEAD
+    { path: "/volunteer", element: <Volunteer /> },
+    { path: "/resources", element: <Resources /> },
+    { path: "/about", element: <About /> },
+    { path: "/pages", element: <Pages /> }
+=======
     { path: "/volunteer", element: <Volunteer /> }
+>>>>>>> upstream/main
   ]);
 
   return <RouterProvider router={appRouter}></RouterProvider>;

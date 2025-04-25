@@ -29,6 +29,24 @@ const Navbar = () => {
         >
           Volunteer <ChevronDown className="inline w-4 h-4 ml-1" />
         </li>
+<<<<<<< HEAD
+        <li 
+          className="group relative cursor-pointer hover:text-lime-500 transition-colors"
+          onClick={() => navigate('/resources')}
+        >
+          Resources <ChevronDown className="inline w-4 h-4 ml-1" />
+        </li>
+        <li 
+          className="group relative cursor-pointer hover:text-lime-500 transition-colors"
+          onClick={() => navigate('/about')}
+        >
+          About <ChevronDown className="inline w-4 h-4 ml-1" />
+        </li>
+        <li 
+          className="group relative cursor-pointer hover:text-lime-500 transition-colors"
+          onClick={() => navigate('/pages')}
+        >
+=======
         <li className="group relative cursor-pointer">
           Resources <ChevronDown className="inline w-4 h-4 ml-1" />
         </li>
@@ -36,6 +54,7 @@ const Navbar = () => {
           About <ChevronDown className="inline w-4 h-4 ml-1" />
         </li>
         <li className="group relative cursor-pointer">
+>>>>>>> upstream/main
           Pages <ChevronDown className="inline w-4 h-4 ml-1" />
         </li>
         <li className="cursor-pointer text-orange-600 font-semibold">

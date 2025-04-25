@@ -1,6 +1,10 @@
 {
   "dependencies": {
     "cors": "^2.8.5",
+<<<<<<< HEAD
+    "dotenv": "^16.5.0",
+=======
+>>>>>>> upstream/main
     "express": "^5.1.0",
     "mongoose": "^8.13.2"
   },
