@@ -15,7 +15,7 @@ const Adoption = () => {
       breed: 'Labrador Retriever',
       age: '2 years',
       gender: 'Male',
-      image: '/images/pets/dog1.jpg',
+      image: '/images/dog5.jpg',
       description: 'Friendly and energetic, great with kids and other pets.',
       status: 'Available'
     },
@@ -26,7 +26,7 @@ const Adoption = () => {
       breed: 'Siamese',
       age: '1 year',
       gender: 'Female',
-      image: '/images/pets/cat1.jpg',
+      image: '/images/cat5.jpg',
       description: 'Playful and affectionate, loves cuddles.',
       status: 'Available'
     },
@@ -89,7 +89,7 @@ const Adoption = () => {
                 <img
                   src={pet.image}
                   alt={pet.name}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-90 object-cover"
                 />
                 <div className="absolute top-4 right-4 bg-lime-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                   {pet.status}
