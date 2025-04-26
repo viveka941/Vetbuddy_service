@@ -139,7 +139,7 @@ const Pages = () => {
           <h2 className="text-3xl font-bold text-gray-900 mb-8">Quick Links</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              to="/appointment"
+              to="/login"
               className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-3 rounded-full font-medium transition duration-200"
             >
               Book Appointment
