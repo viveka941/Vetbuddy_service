@@ -47,8 +47,13 @@ const Navbar = () => {
         >
           Pages <ChevronDown className="inline w-4 h-4 ml-1" />
         </li>
-        <li className="cursor-pointer text-orange-600 font-semibold">
-          <Link to="/login">Login</Link>
+        <li className="cursor-pointer">
+          <Link 
+            to="/login" 
+            className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+          >
+            Login
+          </Link>
         </li>
       </ul>
 
