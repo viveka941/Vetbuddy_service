@@ -44,6 +44,7 @@ const Hero = () => {
           <span className="font-bold">30 min</span>
         </div>
         <h1>hiii veekdkas</h1>
+        <h1>hiii veekdkas</h1>
       </div>
     </section>
   );
