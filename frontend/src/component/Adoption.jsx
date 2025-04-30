@@ -32,6 +32,18 @@ const Adoption = () => {
       description: 'Playful and affectionate, loves cuddles.',
       status: 'Available'
     },
+    {
+      id: 2,
+      name: 'Bruno',
+      type: 'Dog',
+      breed: 'Pomeranian',
+      age: '1 year',
+      gender: 'Female',
+      image: '/images/dog6.png',
+      description: 'Playful and affectionate, loves cuddles.',
+      status: 'Available'
+    },
+    
     // Add more pets as needed
   ];
 
