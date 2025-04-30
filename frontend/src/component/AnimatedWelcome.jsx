@@ -7,7 +7,7 @@ const AnimatedWelcome = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/login');
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
@@ -19,7 +19,7 @@ const AnimatedWelcome = () => {
         autoPlay
         muted
         loop
-        className="absolute inset-0 w-full h-full object-cover opacity-50"
+        className="absolute inset-0 w-full h-full p-0 object-cover opacity-30"
       >
         <source src="/videos/welcome-bg.mp4" type="video/mp4" />
       </video>

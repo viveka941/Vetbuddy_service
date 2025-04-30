@@ -7,7 +7,7 @@ const AnimatedDonation = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       navigate('/donate');
-    }, 2000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, [navigate]);
