@@ -1,16 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import AnimatedWelcome from "./AnimatedWelcome";
 import AnimatedDonation from "./AnimatedDonation";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [showWelcome, setShowWelcome] = useState(false);
   const [showDonation, setShowDonation] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if user is on dashboard to determine authentication status
+    const isOnDashboard = location.pathname.includes('/dashboard');
+    setIsAuthenticated(isOnDashboard);
+  }, [location.pathname]);
 
   const handleLoginClick = () => {
     setShowWelcome(true);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    navigate('/');
   };
 
   const handleDonateClick = () => {
@@ -63,12 +76,21 @@ const Navbar = () => {
             Pages <ChevronDown className="inline w-4 h-4 ml-1" />
           </li>
           <li className="cursor-pointer">
-            <button
-              onClick={handleLoginClick}
-              className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
-            >
-              Login
-            </button>
+            {isAuthenticated ? (
+              <button
+                onClick={handleLogout}
+                className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              >
+                Logout
+              </button>
+            ) : (
+              <button
+                onClick={handleLoginClick}
+                className="bg-lime-500 hover:bg-lime-600 text-white px-6 py-2 rounded-xl font-semibold transition-all duration-200 hover:shadow-lg hover:scale-105"
+              >
+                Login
+              </button>
+            )}
           </li>
         </ul>
 
