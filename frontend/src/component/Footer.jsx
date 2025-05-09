@@ -73,7 +73,7 @@ export default function Footer() {
         <div className="flex flex-col justify-between">
           <div>
             <h3 className="font-bold mb-2">Follow Us</h3>
-            <div className="flex gap-4 text-lime-400 text-lg">
+            <div className="flex gap-8 text-lime-400 text-lg">
               <FaFacebookF />
               <FaInstagram />
               <FaTwitter />
