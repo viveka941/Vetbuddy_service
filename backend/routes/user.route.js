@@ -4,6 +4,7 @@ import { bookappointment, userAllAppointment } from "../controller/appointment.c
 
 import { formData } from "../controller/form.controller.js";
 import { getAllVolunteer, volunteerData } from "../controller/volunteer.controller.js";
+import { adoptPetData } from "../controller/adoptPet.controller.js";
 const router = express.Router();
 
 router.route("/register").post(register);
@@ -15,5 +16,6 @@ router.route("/userAllAppointment").get(userAllAppointment);
 router.route("/form").post(formData)
 router.route("/Volunteer").post(volunteerData)
 router.route("/getAllVolunteer").get(getAllVolunteer)
+router.route("/pet").post(adoptPetData)
 
 export default router;
