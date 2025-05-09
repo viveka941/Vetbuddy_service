@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./component/Home";
 import Register from "./component/user/Register";
 import Login from "./component/user/Login";
+import ForgotPassword from "./component/user/ForgotPassword";
 import UserDashboard from "./component/user/UserDashboard";
 import AppointementForm from "./component/user/AppointementForm";
 import Donation from "./component/Donation";
@@ -28,6 +29,7 @@ function App() {
     { path: "/", element: <Home /> },
     { path: "/register", element: <Register /> },
     { path: "/login", element: <Login /> },
+    { path: "/forgot-password", element: <ForgotPassword /> },
     { path: "/dashboard/:id", element: <UserDashboard /> },
     { path: "/appointementbook/:id", element: <AppointementForm /> },
     { path: "/donate", element: <Donation /> },
