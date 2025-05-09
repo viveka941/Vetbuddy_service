@@ -28,7 +28,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <FaEnvelope className="text-lime-400" />
-              hello@animalcove.com
+              support@vetbuddy.com
             </li>
           </ul>
         </div>

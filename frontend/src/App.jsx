@@ -23,6 +23,7 @@ import PetMentalHealth from "./component/PetMentalHealth";
 import EmergencyCare from "./component/EmergencyCare";
 import TrainingBehavior from "./component/TrainingBehavior";
 import ValForm from "./component/ValForm";
+import NotFound from "./views/NotFound";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -48,7 +49,8 @@ function App() {
     { path: "/resources/health/mental-health", element: <PetMentalHealth /> },
     { path: "/resources/health/emergency-care", element: <EmergencyCare /> },
     { path: "/resources/training", element: <TrainingBehavior /> }
-    ,{path:"/valForm", element:<ValForm/>}
+    ,{path:"/valForm", element:<ValForm/>},
+    {path:"*",element:<NotFound/>},
   ]);
 
   return <RouterProvider router={appRouter}></RouterProvider>;
