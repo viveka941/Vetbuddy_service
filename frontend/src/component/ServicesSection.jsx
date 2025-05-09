@@ -58,11 +58,11 @@ const ServicesSection = () => {
               alt="Girl with dog"
               className="absolute inset-0 object-cover w-full h-full rounded-[2rem]"
             />
-            <img
+            {/* <img
               src="/images/paw.png"
               alt="Paw Icon"
               className="absolute bottom-4 left-4 w-8 h-8"
-            />
+            /> */}
           </div>
         </div>
 
