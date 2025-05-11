@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
-import { Search, Filter, X } from 'lucide-react';
+import { Search, Filter, X, Check } from 'lucide-react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 
@@ -9,7 +9,9 @@ const Adoption = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [selectedPet, setSelectedPet] = useState(null);
   const [showAdoptionForm, setShowAdoptionForm] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
+  const [message, setMessage] = useState();
 
   const pets = [
     {
@@ -71,8 +73,15 @@ const Adoption = () => {
         headers: { "Content-Type": "application/json" },
       });
       console.log("Application submitted:", res.data);
-      reset();
-      handleCloseForm();
+      if (res.data.success === true) {
+        setShowSuccess(true);
+        setTimeout(() => {
+          setShowSuccess(false);
+          handleCloseForm();
+        }, 2000);
+        setMessage(res.data.message);
+        reset();
+      }
     } catch (error) {
       console.error("Submission error:", error);
     }
@@ -225,6 +234,21 @@ const Adoption = () => {
                   </button>
                 </div>
               </form>
+            </div>
+          </div>
+        )}
+
+        {/* Success Animation Overlay */}
+        {showSuccess && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60]">
+            <div className="bg-white rounded-2xl p-8 flex flex-col items-center">
+              <div className="w-20 h-20 bg-lime-100 rounded-full flex items-center justify-center mb-4 animate-bounce">
+                <Check className="w-10 h-10 text-lime-500" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Adoption Successful!</h3>
+              <p className="text-gray-600 text-center">
+                Thank you for choosing to adopt {selectedPet?.name}. We'll contact you soon!
+              </p>
             </div>
           </div>
         )}
