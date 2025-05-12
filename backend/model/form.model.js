@@ -1,18 +1,26 @@
 import mongoose from "mongoose";
 
-const formSchema = mongoose.Schema({
+const feedbackschema = new mongoose.Schema({
     name:{
-        type:String
+        type:String,
+        required:true
     },
     email:{
-        type:String
+        type:String,
+        required:true
     },
-    interest:{
-        type:[String]
+    rating:{
+        type:Number,
+        required:true
     },
-    message:{
-        type:String, required:true 
+    serviceType:{
+        type:String,
+        required:true
+    },
+    feedback:{
+        type:String,
+        required:true
     }
 })
 
-export const  form = mongoose.model("form", formSchema)
+export const userfeedback = mongoose.model("userfeedback", feedbackschema)
