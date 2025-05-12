@@ -1,15 +1,16 @@
-import { form } from "../model/form.model.js"
+import { userfeedback } from "../model/form.model.js";
 
-export const formData = async(req,res)=>{
+export const feedbackData = async(req,res)=>{
     try {
-        const {name,email,interest, message}= req.body;
+        const {name, email, rating, serviceType, feedback} = req.body;
 
-        const newForm = await form.create({name,email,interest,message})
-        return res.status(200).json({
-            message : "created success",
-            data : newForm
-        })
+    const newFeedback = await userfeedback.create({name,email,rating,serviceType,feedback
         
+    })
+        return res.status(200).json({
+            message : "Feedback Successfully Submitted",
+            data : newFeedback
+        })
     } catch (error) {
         console.log("somthing error server side",error)
     }
