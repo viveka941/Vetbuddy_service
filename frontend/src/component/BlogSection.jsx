@@ -41,7 +41,7 @@ export default function BlogSection() {
   return (
     <div className="py-16 px-4 md:px-20 bg-white text-center">
       <h4 className="uppercase tracking-wide text-gray-500 mb-2">
-        Animal Cove Resources
+        Vet Buddy Resources
       </h4>
       <h2 className="text-4xl font-bold mb-4">
         <span className="text-lime-600">Explore</span> Our Blog for Tails of Joy
