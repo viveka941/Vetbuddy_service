@@ -15,7 +15,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
         {/* Logo + Contact */}
         <div>
-          <h1 className="text-2xl font-bold text-lime-400">Animal Cove</h1>
+          <h1 className="text-2xl font-bold text-lime-400">Vet Buddy</h1>
           <p className="text-sm mb-6">UNLEASHING JOY, ONE PAW AT A TIME</p>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center gap-2">
@@ -91,7 +91,7 @@ export default function Footer() {
 
       {/* Bottom Line */}
       <div className="border-t border-green-700 mt-10 pt-6 text-xs text-center sm:text-left sm:flex justify-between text-white/70">
-        <p>2025 © Animal Cove. All Rights Reserved</p>
+        <p>2025 © Vet Buddy. All Rights Reserved</p>
         <div className="flex justify-center sm:justify-end gap-4 mt-2 sm:mt-0">
           <span>Designed by Techiee Gaurav</span>
           <span>Powered by Techiee</span>
