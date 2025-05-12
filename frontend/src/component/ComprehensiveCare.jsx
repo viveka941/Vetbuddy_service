@@ -45,7 +45,7 @@ const ComprehensiveCare = () => {
           <span className="text-lime-600">Tailored</span> for Every Furry Friend
         </h2>
         <p className="text-gray-600 mb-8">
-          At Animal Cove, we understand that every pet is unique. Our comprehensive care approach combines 
+          At Vet Buddy, we understand that every pet is unique. Our comprehensive care approach combines 
           expert veterinary services, personalized enrichment programs, and dedicated adoption support to 
           ensure your pet receives the attention and care they deserve throughout their journey with us.
         </p>

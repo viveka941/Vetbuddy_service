@@ -32,12 +32,6 @@ const HeroSection = () => {
           alt="Woman with dog"
           className="w-[300px] md:w-[350px] rounded-[2rem] object-cover"
         />
-        {/* <div className="absolute -bottom-4 left-4 bg-lime-200 p-4 rounded-xl">
-          <img
-            src="/images/paw.png"
-            className="w-6 h-6 object-contain"
-          />
-        </div> */}
       </div>
     </section>
   );
