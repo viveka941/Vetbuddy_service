@@ -62,24 +62,28 @@ export default function UserDashboard() {
 
   const handleStatusUpdate = async (appointmentId, newStatus) => {
     try {
-      const response = await axios.put(`http://localhost:5000/user/updateAppointmentStatus/${appointmentId}`, {
-        status: newStatus
-      });
+      const response = await axios.patch(
+        `http://localhost:5000/user/book/${appointmentId}`,
+        {
+          status: newStatus,
+        }
+      );
 
       if (response.data.success) {
-        // Update local state
-        const updatedAppointments = userAppointment.map(appointment => 
-          appointment._id === appointmentId 
+        // Correct: Update the appointment status in local state
+        const updatedAppointments = userAppointment.map((appointment) =>
+          appointment._id === appointmentId
             ? { ...appointment, status: newStatus }
             : appointment
         );
+
         setUserAppointment(updatedAppointments);
 
         // Show success alert
         setAlert({
           show: true,
           message: "Appointment status updated successfully!",
-          type: "success"
+          type: "success",
         });
       }
     } catch (error) {
@@ -87,7 +91,7 @@ export default function UserDashboard() {
       setAlert({
         show: true,
         message: "Failed to update appointment status. Please try again.",
-        type: "error"
+        type: "error",
       });
     }
 
@@ -96,6 +100,7 @@ export default function UserDashboard() {
       setAlert({ show: false, message: "", type: "" });
     }, 3000);
   };
+  
 
   if (loading) {
     return (

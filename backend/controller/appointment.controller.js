@@ -4,7 +4,8 @@ import { User } from "../model/user.model.js";
 export const bookappointment = async (req, res) => {
   try {
     const { id } = req.params;
-    const { animalName, dateTime, address, DoctorName, reason,status } = req.body;
+    const { animalName, dateTime, address, DoctorName, reason, status } =
+      req.body;
 
     // Validate required fields
     if (!animalName || !dateTime || !address || !DoctorName || !reason) {
@@ -67,7 +68,10 @@ export const bookappointment = async (req, res) => {
 };
 export const userAllAppointment = async (req, res) => {
   try {
-   const appointments = await Appointment.find().populate("DoctorName", "name");
+    const appointments = await Appointment.find().populate(
+      "DoctorName",
+      "name"
+    );
 
     return res.status(200).json({
       message: "successfull appointment fetch",
@@ -82,3 +86,38 @@ export const userAllAppointment = async (req, res) => {
     });
   }
 };
+
+export const updateStatus = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { status } = req.body;
+
+    const existingUser = await Appointment.findById(id);
+    if (!existingUser) {
+      return res.status(404).json({
+        message: "User not found",
+        success: false,
+      });
+    }
+
+    const bookStatus = await Appointment.findByIdAndUpdate(
+      id,
+      { status },
+      { new: true } // ✅ return the updated document
+    );
+
+    return res.status(200).json({
+      message: "Appointment status updated",
+      success: true,
+      data: bookStatus,
+    });
+  } catch (error) {
+    console.log("Server error:", error);
+    return res.status(500).json({
+      message: "Internal server error",
+      success: false,
+    });
+  }
+};
+
+
