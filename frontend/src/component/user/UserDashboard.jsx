@@ -16,7 +16,9 @@ export default function UserDashboard() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/user/dashboard/${id}`);
+        const response = await axios.get(
+          `http://15.207.115.177:5000/user/dashboard/${id}`
+        );
         setUser(response.data.user);
         setLoading(false);
         console.log(response.data.user)
@@ -31,7 +33,9 @@ export default function UserDashboard() {
   useEffect(() => {
     const fetchAppointments = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/user/userAllAppointment");
+        const res = await axios.get(
+          "http://15.207.115.177:5000/user/userAllAppointment"
+        );
         const appointmentList = res.data.list.filter((appi) => appi.userId === id);
         setUserAppointment(appointmentList);
 
@@ -47,7 +51,9 @@ export default function UserDashboard() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/user/allUser");
+        const response = await axios.get(
+          "http://15.207.115.177:5000/user/allUser"
+        );
         const doctorList = response.data.user.filter((user) => user.role === "Doctor");
         setDoctor(doctorList);
 
@@ -63,7 +69,7 @@ export default function UserDashboard() {
   const handleStatusUpdate = async (appointmentId, newStatus) => {
     try {
       const response = await axios.patch(
-        `http://localhost:5000/user/book/${appointmentId}`,
+        `http://15.207.115.177:5000/user/book/${appointmentId}`,
         {
           status: newStatus,
         }

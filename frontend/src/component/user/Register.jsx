@@ -20,11 +20,15 @@ export default function Register() {
     console.log("Form data:", data);
 
     try {
-      const res = await axios.post("http://localhost:5000/user/register", data, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const res = await axios.post(
+        "http://15.207.115.177:5000/user/register",
+        data,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       if (res?.data?.message) {
         console.log("Response:", res.data);

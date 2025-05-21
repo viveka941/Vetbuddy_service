@@ -24,6 +24,7 @@ import EmergencyCare from "./component/EmergencyCare";
 import TrainingBehavior from "./component/TrainingBehavior";
 import ValForm from "./component/ValForm";
 import NotFound from "./views/NotFound";
+import WebSocketComponent from "./component/user/WebSocketComponent";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -51,6 +52,7 @@ function App() {
     { path: "/resources/training", element: <TrainingBehavior /> }
     ,{path:"/valForm", element:<ValForm/>},
     {path:"*",element:<NotFound/>},
+    {path:"/chat",element:<WebSocketComponent/>}
   ]);
 
   return <RouterProvider router={appRouter}></RouterProvider>;

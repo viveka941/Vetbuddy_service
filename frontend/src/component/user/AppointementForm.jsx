@@ -19,7 +19,9 @@ export default function AppointmentForm() {
   useEffect(() => {
     const doctorList = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/user/allUser");
+        const response = await axios.get(
+          "http://15.207.115.177:5000/user/allUser"
+        );
         console.log(response.data.user);
         const doctorList = response.data.user.filter((user)=>user.role=="Doctor")
         setDoctor(doctorList)
@@ -37,7 +39,7 @@ export default function AppointmentForm() {
     
     try {
       const response = await axios.post(
-        `http://localhost:5000/user/appointment/${id}`,
+        `http://15.207.115.177:5000/user/appointment/${id}`,
         data,
         {
           headers: {

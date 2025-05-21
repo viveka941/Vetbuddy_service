@@ -11,7 +11,10 @@ const ForgotPassword = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post("http://localhost:5000/user/forgot-password", data);
+      const response = await axios.post(
+        "http://15.207.115.177:5000/user/forgot-password",
+        data
+      );
       setMessage("Password reset instructions have been sent to your email.");
       setMessageType("success");
     } catch (error) {
